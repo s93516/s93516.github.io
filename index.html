@@ -7,30 +7,93 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <style>
-        body { font-family: 'Noto Serif TC', serif; background-color: #fdfbf7; color: #2c241b; }
-        .text-accent { color: #8b2626; } .bg-accent { background-color: #8b2626; }
-        .navbar { background-color: rgba(44, 36, 27, 0.95) !important; backdrop-filter: blur(5px); }
-        .hero-section { background: linear-gradient(rgba(15, 12, 9, 0.7), rgba(15, 12, 9, 0.8)), url('https://picsum.photos/1920/1080?random=10') center/cover no-repeat fixed; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
-        .hero-title { font-size: 4rem; letter-spacing: 0.2em; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .section-divider { width: 2px; height: 60px; background-color: #8b2626; margin: 0 auto 2rem; }
-        .artifact-card { transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid #e0d5c1; }
-        .artifact-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(139, 38, 38, 0.1) !important; }
+        /* 基礎設定與自訂色彩 */
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: #fdfbf7; /* 宣紙米白色 */
+            color: #2c241b;
+        }
+
+        .text-accent { color: #8b2626; } /* 傳統暗紅色 */
+        .bg-accent { background-color: #8b2626; }
+
+        /* 導覽列優化 */
+        .navbar {
+            background-color: rgba(44, 36, 27, 0.95) !important;
+            backdrop-filter: blur(5px);
+        }
+
+        /* 滿版古典橫幅 (已替換為 5.jpg) */
+        .hero-section {
+            background: linear-gradient(rgba(15, 12, 9, 0.7), rgba(15, 12, 9, 0.8)), url('images/5.jpg') center/cover no-repeat fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            letter-spacing: 0.2em;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 裝飾線 */
+        .section-divider {
+            width: 2px;
+            height: 60px;
+            background-color: #8b2626;
+            margin: 0 auto 2rem;
+        }
+
+        /* 卡片懸停效果 */
+        .artifact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #e0d5c1;
+        }
+        .artifact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(139, 38, 38, 0.1) !important;
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#hero"><i class="bi bi-bank"></i> 數位展藏</a>
+        <a class="navbar-brand fw-bold" href="#hero">
+            <i class="bi bi-bank"></i> 數位展藏
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#intro">歷史沿革</a></li>
+                <li class="nav-item"><a class="nav-link" href="#architecture">閩南建築</a></li>
+                <li class="nav-item"><a class="nav-link" href="#artifacts">重點文物</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
+
 <header id="hero" class="hero-section">
     <div class="container">
         <p class="fs-4 text-white-50 mb-3" style="letter-spacing: 0.3em;">18世紀台灣地方記憶</p>
         <h1 class="hero-title mb-4">義民廟與閩南建築特展</h1>
+        <p class="lead w-75 mx-auto mb-5 lh-lg">
+            走入時光迴廊，探索傳統廟宇的燕尾脊與木雕之美。<br>見證地方信仰與庶民生活的交織。
+        </p>
         <a href="#intro" class="btn btn-outline-light btn-lg px-5 rounded-0 border-2">開始導覽</a>
     </div>
 </header>
+
 <section id="intro" class="py-5 mt-5">
     <div class="container py-5 text-center">
         <div class="section-divider"></div>
@@ -51,7 +114,7 @@
         <div class="row gy-4">
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm bg-light">
-                    <img src="https://picsum.photos/seed/temple1/600/400" class="card-img-top rounded-0" alt="燕尾脊">
+                    <img src="images/1.jpg" class="card-img-top rounded-0" alt="燕尾脊">
                     <div class="card-body p-4 text-center">
                         <h4 class="fw-bold mb-3">燕尾脊</h4>
                         <p class="text-muted">屋頂正脊兩端向上彎起，形如燕子飛翔的尾巴，是傳統尊貴與神聖地位的象徵。</p>
@@ -60,7 +123,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm bg-light">
-                    <img src="https://picsum.photos/seed/temple2/600/400" class="card-img-top rounded-0" alt="木雕斗栱">
+                    <img src="images/2.jpg" class="card-img-top rounded-0" alt="木雕斗栱">
                     <div class="card-body p-4 text-center">
                         <h4 class="fw-bold mb-3">木雕斗栱</h4>
                         <p class="text-muted">精細的木構件，不用一根鐵釘即可支撐屋頂重量，並雕刻各種歷史故事與吉祥圖騰。</p>
@@ -69,7 +132,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm bg-light">
-                    <img src="https://picsum.photos/seed/temple3/600/400" class="card-img-top rounded-0" alt="石雕龍柱">
+                    <img src="images/3.jpg" class="card-img-top rounded-0" alt="石雕龍柱">
                     <div class="card-body p-4 text-center">
                         <h4 class="fw-bold mb-3">石雕龍柱</h4>
                         <p class="text-muted">立於前殿的盤龍石柱，展現了18世紀匠人高超的立體透雕技法與對神明的敬畏。</p>
@@ -79,16 +142,18 @@
         </div>
     </div>
 </section>
+
 <section id="artifacts" class="py-5">
     <div class="container py-5">
         <div class="section-divider"></div>
         <h2 class="fw-bold text-center mb-5 text-accent">夜間照明與常民文物</h2>
+
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="card artifact-card bg-transparent" data-bs-toggle="modal" data-bs-target="#lanternModal">
                     <div class="row g-0 align-items-center">
                         <div class="col-4">
-                            <img src="https://picsum.photos/seed/lantern/400/400" class="img-fluid rounded-start" alt="竹編燈籠">
+                            <img src="images/4.jpg" class="img-fluid rounded-start" alt="竹編燈籠">
                         </div>
                         <div class="col-8">
                             <div class="card-body p-4">
@@ -114,7 +179,7 @@
             <div class="modal-body p-5">
                 <div class="row align-items-center">
                     <div class="col-md-5 mb-4 mb-md-0">
-                        <img src="https://picsum.photos/seed/lantern/600/800" class="img-fluid shadow-sm" alt="燈籠特寫">
+                        <img src="images/4.jpg" class="img-fluid shadow-sm" alt="燈籠特寫">
                     </div>
                     <div class="col-md-7 ps-md-4">
                         <h4 class="fw-bold text-accent mb-3">道具背景</h4>
@@ -137,6 +202,7 @@
         <p class="mb-0 text-white-50">© 2026 期末專案 | 18世紀台灣歷史與閩南建築數位展</p>
     </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
